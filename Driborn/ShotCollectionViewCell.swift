@@ -25,7 +25,7 @@ class ShotCollectionViewCell: UICollectionViewCell {
     }
     
     func setupImageView() {
-        
+        print("test!")
     }
     
     
