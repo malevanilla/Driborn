@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E713A4521E1F89B400E58BB6 /* ShotImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E713A4511E1F89B400E58BB6 /* ShotImage.swift */; };
 		E75CA2061E1C9EFC0036CFC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CA2051E1C9EFC0036CFC1 /* AppDelegate.swift */; };
 		E75CA2081E1C9EFC0036CFC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CA2071E1C9EFC0036CFC1 /* ViewController.swift */; };
 		E75CA20B1E1C9EFC0036CFC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75CA2091E1C9EFC0036CFC1 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E713A4511E1F89B400E58BB6 /* ShotImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotImage.swift; sourceTree = "<group>"; };
 		E75CA2021E1C9EFC0036CFC1 /* Driborn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Driborn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75CA2051E1C9EFC0036CFC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E75CA2071E1C9EFC0036CFC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				E75CA2051E1C9EFC0036CFC1 /* AppDelegate.swift */,
 				E75CA22A1E1D07350036CFC1 /* ShotCollectionViewCell.swift */,
 				E75CA2071E1C9EFC0036CFC1 /* ViewController.swift */,
+				E713A4511E1F89B400E58BB6 /* ShotImage.swift */,
 				E75CA21F1E1CCAC10036CFC1 /* ShotHelper.swift */,
 				E75CA2091E1C9EFC0036CFC1 /* Main.storyboard */,
 				E75CA20F1E1C9EFC0036CFC1 /* Assets.xcassets */,
@@ -181,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E75CA20E1E1C9EFC0036CFC1 /* Driborn.xcdatamodeld in Sources */,
+				E713A4521E1F89B400E58BB6 /* ShotImage.swift in Sources */,
 				E75CA2081E1C9EFC0036CFC1 /* ViewController.swift in Sources */,
 				E75CA22B1E1D07350036CFC1 /* ShotCollectionViewCell.swift in Sources */,
 				E75CA2061E1C9EFC0036CFC1 /* AppDelegate.swift in Sources */,
@@ -354,6 +358,7 @@
 				E75CA2191E1C9EFC0036CFC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

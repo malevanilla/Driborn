@@ -43,7 +43,7 @@ class ShotHelper {
                     let data = JSON(response.result.value!)
                     
                     for d in data {
-//                        print(d.1["images"])
+                        print(d.1["images"])
                         print(d.1["images"]["normal"])
                     }
 //                    print(data)
