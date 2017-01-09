@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E713A4521E1F89B400E58BB6 /* ShotImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E713A4511E1F89B400E58BB6 /* ShotImage.swift */; };
-		E74767831E23750A00300064 /* ShtoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74767821E23750A00300064 /* ShtoCollectionViewController.swift */; };
+		E74767851E23A08400300064 /* ShtoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74767841E23A08400300064 /* ShtoCollectionViewController.swift */; };
 		E75CA2061E1C9EFC0036CFC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CA2051E1C9EFC0036CFC1 /* AppDelegate.swift */; };
 		E75CA20B1E1C9EFC0036CFC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75CA2091E1C9EFC0036CFC1 /* Main.storyboard */; };
 		E75CA20E1E1C9EFC0036CFC1 /* Driborn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E75CA20C1E1C9EFC0036CFC1 /* Driborn.xcdatamodeld */; };
@@ -39,7 +39,7 @@
 
 /* Begin PBXFileReference section */
 		E713A4511E1F89B400E58BB6 /* ShotImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotImage.swift; sourceTree = "<group>"; };
-		E74767821E23750A00300064 /* ShtoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShtoCollectionViewController.swift; path = ../ShtoCollectionViewController.swift; sourceTree = "<group>"; };
+		E74767841E23A08400300064 /* ShtoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShtoCollectionViewController.swift; sourceTree = "<group>"; };
 		E75CA2021E1C9EFC0036CFC1 /* Driborn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Driborn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75CA2051E1C9EFC0036CFC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E75CA20A1E1C9EFC0036CFC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 			children = (
 				E75CA2251E1CE8B20036CFC1 /* Libs */,
 				E75CA2051E1C9EFC0036CFC1 /* AppDelegate.swift */,
-				E74767821E23750A00300064 /* ShtoCollectionViewController.swift */,
+				E74767841E23A08400300064 /* ShtoCollectionViewController.swift */,
 				E75CA22A1E1D07350036CFC1 /* ShotCollectionViewCell.swift */,
 				E713A4511E1F89B400E58BB6 /* ShotImage.swift */,
 				E75CA21F1E1CCAC10036CFC1 /* ShotHelper.swift */,
@@ -183,9 +183,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E74767851E23A08400300064 /* ShtoCollectionViewController.swift in Sources */,
 				E75CA20E1E1C9EFC0036CFC1 /* Driborn.xcdatamodeld in Sources */,
 				E713A4521E1F89B400E58BB6 /* ShotImage.swift in Sources */,
-				E74767831E23750A00300064 /* ShtoCollectionViewController.swift in Sources */,
 				E75CA22B1E1D07350036CFC1 /* ShotCollectionViewCell.swift in Sources */,
 				E75CA2061E1C9EFC0036CFC1 /* AppDelegate.swift in Sources */,
 				E75CA2201E1CCAC10036CFC1 /* ShotHelper.swift in Sources */,
