@@ -10,25 +10,25 @@ import UIKit
 
 class ShotCollectionViewCell: UICollectionViewCell {
     
-    var imageView:UIImageView!
-    var image:UIImage!
+    @IBOutlet weak var imageView: UIImageView!
+
+//    
+//    var imageOffset:CGPoint!
+//    
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//    }
+//    
+//    required init(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)!
+//        
+//    }
+//    
+//    func setupImageView() {
+//        print("test!")
+//    }
     
-    var imageOffset:CGPoint!
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)!
-        
-    }
-    
-    func setupImageView() {
-        print("test!")
-    }
-    
-    
+
     
     
 }

@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E713A4521E1F89B400E58BB6 /* ShotImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E713A4511E1F89B400E58BB6 /* ShotImage.swift */; };
+		E74767831E23750A00300064 /* ShtoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74767821E23750A00300064 /* ShtoCollectionViewController.swift */; };
 		E75CA2061E1C9EFC0036CFC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CA2051E1C9EFC0036CFC1 /* AppDelegate.swift */; };
-		E75CA2081E1C9EFC0036CFC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CA2071E1C9EFC0036CFC1 /* ViewController.swift */; };
 		E75CA20B1E1C9EFC0036CFC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75CA2091E1C9EFC0036CFC1 /* Main.storyboard */; };
 		E75CA20E1E1C9EFC0036CFC1 /* Driborn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E75CA20C1E1C9EFC0036CFC1 /* Driborn.xcdatamodeld */; };
 		E75CA2101E1C9EFC0036CFC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75CA20F1E1C9EFC0036CFC1 /* Assets.xcassets */; };
@@ -39,9 +39,9 @@
 
 /* Begin PBXFileReference section */
 		E713A4511E1F89B400E58BB6 /* ShotImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotImage.swift; sourceTree = "<group>"; };
+		E74767821E23750A00300064 /* ShtoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShtoCollectionViewController.swift; path = ../ShtoCollectionViewController.swift; sourceTree = "<group>"; };
 		E75CA2021E1C9EFC0036CFC1 /* Driborn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Driborn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75CA2051E1C9EFC0036CFC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E75CA2071E1C9EFC0036CFC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E75CA20A1E1C9EFC0036CFC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E75CA20D1E1C9EFC0036CFC1 /* Driborn.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Driborn.xcdatamodel; sourceTree = "<group>"; };
 		E75CA20F1E1C9EFC0036CFC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,8 +87,8 @@
 			children = (
 				E75CA2251E1CE8B20036CFC1 /* Libs */,
 				E75CA2051E1C9EFC0036CFC1 /* AppDelegate.swift */,
+				E74767821E23750A00300064 /* ShtoCollectionViewController.swift */,
 				E75CA22A1E1D07350036CFC1 /* ShotCollectionViewCell.swift */,
-				E75CA2071E1C9EFC0036CFC1 /* ViewController.swift */,
 				E713A4511E1F89B400E58BB6 /* ShotImage.swift */,
 				E75CA21F1E1CCAC10036CFC1 /* ShotHelper.swift */,
 				E75CA2091E1C9EFC0036CFC1 /* Main.storyboard */,
@@ -185,7 +185,7 @@
 			files = (
 				E75CA20E1E1C9EFC0036CFC1 /* Driborn.xcdatamodeld in Sources */,
 				E713A4521E1F89B400E58BB6 /* ShotImage.swift in Sources */,
-				E75CA2081E1C9EFC0036CFC1 /* ViewController.swift in Sources */,
+				E74767831E23750A00300064 /* ShtoCollectionViewController.swift in Sources */,
 				E75CA22B1E1D07350036CFC1 /* ShotCollectionViewCell.swift in Sources */,
 				E75CA2061E1C9EFC0036CFC1 /* AppDelegate.swift in Sources */,
 				E75CA2201E1CCAC10036CFC1 /* ShotHelper.swift in Sources */,
@@ -319,6 +319,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cc.yanidea.Driborn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -336,6 +337,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cc.yanidea.Driborn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

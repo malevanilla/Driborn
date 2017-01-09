@@ -12,5 +12,4 @@ struct shotImage {
     var hidpi:String
     var teaser:String
     var normal:String
-    
 }
