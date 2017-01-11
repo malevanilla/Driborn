@@ -27,20 +27,30 @@ class ShotCollectionViewController: UICollectionViewController, UICollectionView
         navigationItem.titleView = titleLabel
         
         collectionView?.backgroundColor = UIColor.white
-        collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
-        
-        let http = ShotHelper()
+        collectionView?.register(ShotCell.self, forCellWithReuseIdentifier: "cellId")
+        setupMenuBar()
+        let http = HttpHelper()
         http.sendShotRequest(module: "shots")
     }
     
+    let menuBar: MenuBar = {
+        let mb = MenuBar()
+        return mb
+    }()
+    
+    private func setupMenuBar() {
+        view.addSubview(menuBar)
+        view.addConstraintsWithFormat(format: "H:[v0]", views: menuBar)
+        view.addConstraintsWithFormat(format: "V:[v0(50)]", views: menuBar)
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageArray.count
+        return imageArray.count 
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
          cell.backgroundColor = UIColor.red
-        
         return cell
     }
     

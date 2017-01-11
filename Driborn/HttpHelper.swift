@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class ShotHelper {
+class HttpHelper {
     
     let url = "https://api.dribbble.com/v1/"
     
@@ -43,8 +43,8 @@ class ShotHelper {
                     let data = JSON(response.result.value!)
                     
                     for d in data {
-                        print(d.1["images"])
-                        print(d.1["images"]["normal"])
+                        print(d.1)
+//                        print(d.1["images"]["normal"])
                     }
 //                    print(data)
                     

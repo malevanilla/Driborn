@@ -26,6 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UINavigationBar.appearance().barTintColor = UIColor(red:0.92, green:0.30, blue:0.54, alpha:1.00)
         
+        //导航条去阴影
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        
         UIApplication.shared.statusBarStyle = .lightContent
         return true
     }
