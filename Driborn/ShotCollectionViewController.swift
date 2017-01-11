@@ -28,11 +28,16 @@ class ShotCollectionViewController: UICollectionViewController, UICollectionView
         
         collectionView?.backgroundColor = UIColor.white
         collectionView?.register(ShotCell.self, forCellWithReuseIdentifier: "cellId")
+        
+        //collectionView向下移动50像素
+        collectionView?.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
+        collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
         setupMenuBar()
-        let http = HttpHelper()
-        http.sendShotRequest(module: "shots")
+      //  let http = HttpHelper()
+      //  http.sendShotRequest(module: "shots")
     }
     
+    //MARK 导航条
     let menuBar: MenuBar = {
         let mb = MenuBar()
         return mb
@@ -40,8 +45,8 @@ class ShotCollectionViewController: UICollectionViewController, UICollectionView
     
     private func setupMenuBar() {
         view.addSubview(menuBar)
-        view.addConstraintsWithFormat(format: "H:[v0]", views: menuBar)
-        view.addConstraintsWithFormat(format: "V:[v0(50)]", views: menuBar)
+        view.addConstraintsWithFormat(format: "H:|[v0]|", views: menuBar)
+        view.addConstraintsWithFormat(format: "V:|[v0(50)]", views: menuBar)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -55,7 +60,7 @@ class ShotCollectionViewController: UICollectionViewController, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width / 2, height: 150)
+        return CGSize(width: view.frame.width / 2, height: (view.frame.width / 2) / 4 * 3 )
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

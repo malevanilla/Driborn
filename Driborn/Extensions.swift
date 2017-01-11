@@ -13,6 +13,7 @@ extension UIView {
         var viewDictionary = [String: UIView]()
         for (index, view) in views.enumerated() {
             let key = "v\(index)"
+            view.translatesAutoresizingMaskIntoConstraints = false
             viewDictionary[key] = view
         }
 //        translatesAutoresizingMaskIntoConstraints = false

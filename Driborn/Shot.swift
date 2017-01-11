@@ -8,13 +8,13 @@
 
 import UIKit
 
-class Shot {
+class Shot  {
     var id: Int!
     var title: String!
     var description: String!
     var width: Int!
     var height: Int!
-    var imageUrl: String!
+    var images: Images!
     var views_count: Int!
     var likes_count: Int!
     var comments_count: Int!
@@ -31,6 +31,10 @@ class Shot {
     var projects_url: String!
     var rebounds_url: String!
     var animated: Bool!
-    
-    
+}
+
+class Images {
+    var hidpi: String!
+    var normal: String!
+    var teaser: String!
 }

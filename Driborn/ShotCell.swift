@@ -8,8 +8,7 @@
 
 import UIKit
 
-class ShotCell: UICollectionViewCell {
-    
+class BaseCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -18,6 +17,18 @@ class ShotCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func setupViews() {
+    }
+}
+
+class ShotCell: BaseCell {
+    
+//    var shot:Shot {
+//        didSet {
+//            shotImageView.image = UIImage(named: (shot.images.hidpi))
+//        }
+//    }
 
     let shotImageView: UIImageView = {
         let imageView = UIImageView()
@@ -26,14 +37,7 @@ class ShotCell: UICollectionViewCell {
         return imageView
     }()
 
-//    
-    func setupShotImage() {
-//        if let shotHiresImageUrl = Shot?.imageUrl {
-//            shotImageView.loadImageUsingUrlString(urlString: shotHiresImageUrl)
-//        }
-    }
-    
-    func setupViews() {
+    override func setupViews() {
         addSubview(shotImageView)
         addConstraintsWithFormat(format: "H:|-0-[v0]-0-|", views: shotImageView)
         addConstraintsWithFormat(format: "V:|-0-[v0]-0-|", views: shotImageView)
