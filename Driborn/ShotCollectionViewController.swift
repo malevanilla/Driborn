@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 private let reuseIdentifier = "shotCell"
 
@@ -14,6 +15,8 @@ class ShotCollectionViewController: UICollectionViewController, UICollectionView
     
     
     var imageArray = [UIImage(named:"1"), UIImage(named:"2"), UIImage(named:"3"), UIImage(named:"4"), UIImage(named:"5"), UIImage(named:"6"), UIImage(named:"7"), UIImage(named:"8"), UIImage(named:"9"), UIImage(named:"10"), UIImage(named:"11"), UIImage(named:"12")]
+    
+    var shotArray: [Shot]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +36,23 @@ class ShotCollectionViewController: UICollectionViewController, UICollectionView
         collectionView?.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
         collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
         setupMenuBar()
-      //  let http = HttpHelper()
-      //  http.sendShotRequest(module: "shots")
+        let http = HttpHelper()
+        http.sendShotRequest(module: "shots") { responseObject, error in
+            if error == nil {
+                let data = JSON(responseObject as AnyObject)
+                
+                print(data)
+                
+                let shot: Shot = {
+                    let s = Shot()
+                    
+                    return s
+                }()
+                
+                
+                
+            }
+        }
     }
     
     //MARK 导航条
@@ -50,7 +68,7 @@ class ShotCollectionViewController: UICollectionViewController, UICollectionView
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageArray.count 
+        return shotArray?.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
