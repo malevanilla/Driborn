@@ -23,7 +23,7 @@ class ShotCollectionViewController: UICollectionViewController, UICollectionView
         //set navigation title color
         let titleLabel = UILabel(frame:CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
         titleLabel.text = "Shot"
-        titleLabel.textColor = UIColor.white
+        titleLabel.textColor = UIColor(red:0.92, green:0.30, blue:0.54, alpha:1.00)
         navigationItem.titleView = titleLabel
         
         collectionView?.backgroundColor = UIColor.white

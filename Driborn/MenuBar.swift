@@ -13,7 +13,7 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = UIColor(red:0.20, green:0.20, blue:0.20, alpha:1.00)
+        cv.backgroundColor = UIColor.white
         cv.dataSource = self
         cv.delegate = self
         return cv
@@ -68,13 +68,13 @@ class MenuCell: BaseCell {
     
     override var isHighlighted: Bool {
         didSet {
-            label.textColor = isHighlighted ? UIColor.white : UIColor(red:0.62, green:0.64, blue:0.65, alpha:1.00)
+            label.textColor = isHighlighted ? UIColor(red:0.92, green:0.30, blue:0.54, alpha:1.00) : UIColor(red:0.62, green:0.64, blue:0.65, alpha:1.00)
         }
     }
     
     override var isSelected: Bool {
         didSet {
-            label.textColor = isSelected ? UIColor.white : UIColor(red:0.62, green:0.64, blue:0.65, alpha:1.00)
+            label.textColor = isSelected ? UIColor(red:0.92, green:0.30, blue:0.54, alpha:1.00) : UIColor(red:0.62, green:0.64, blue:0.65, alpha:1.00)
         }
     }
     
