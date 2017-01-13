@@ -98,7 +98,7 @@ class ShotCollectionViewController: UICollectionViewController, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width / 2, height: (view.frame.width / 2) / 4 * 3 )
+        return CGSize(width: view.frame.width / 2, height: view.frame.width / 8 * 3 )
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
