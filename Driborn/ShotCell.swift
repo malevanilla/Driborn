@@ -24,19 +24,26 @@ class BaseCell: UICollectionViewCell {
 
 class ShotCell: BaseCell {
     
-//    var shot:Shot {
-//        didSet {
-//            shotImageView.image = UIImage(named: (shot.images.hidpi))
-//        }
-//    }
+    var shot: Shot? {
+        didSet {
+            setupShotImage()
+        }
+    }
 
     let shotImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
+//        imageView.image = UIImage(named: "1")
         return imageView
     }()
 
+    func setupShotImage() {
+        if let shotImageUrl = shot?.images?.hidpi {
+            shotImageView.loadImageUsingUrlString(urlString: shotImageUrl)
+        }
+    }
+    
     override func setupViews() {
         addSubview(shotImageView)
         addConstraintsWithFormat(format: "H:|-0-[v0]-0-|", views: shotImageView)

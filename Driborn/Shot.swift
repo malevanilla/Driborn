@@ -10,11 +10,11 @@ import UIKit
 
 class Shot  {
     var id: Int!
-    var title: String!
+    var title: String?
 //    var description: String!
-    var width: Int!
-    var height: Int!
-    var images: Images!
+    var width: Int?
+    var height: Int?
+    var images: Images?
 //    var views_count: Int!
 //    var likes_count: Int!
 //    var comments_count: Int!

@@ -61,6 +61,12 @@
             ReferencedContainer = "container:Driborn.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "-IBARevealServerLogLevel LEVEL1,LEVEL2,LEVEL3"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
