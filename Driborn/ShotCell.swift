@@ -30,8 +30,8 @@ class ShotCell: BaseCell {
         }
     }
 
-    let shotImageView: UIImageView = {
-        let imageView = UIImageView()
+    let shotImageView: MyImageView = {
+        let imageView = MyImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
 //        imageView.image = UIImage(named: "1")
@@ -39,8 +39,13 @@ class ShotCell: BaseCell {
     }()
 
     func setupShotImage() {
-        if let shotImageUrl = shot?.images?.hidpi {
-            shotImageView.loadImageUsingUrlString(urlString: shotImageUrl)
+        if var shotImageUrl = shot?.images?.hidpi {
+            print(shotImageUrl)
+            
+            if shotImageUrl == "" {
+                shotImageUrl = (shot?.images?.normal)!
+            }
+            shotImageView.loadImageUsingUrlString(urlString: shotImageUrl as NSString)
         }
     }
     

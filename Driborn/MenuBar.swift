@@ -13,7 +13,7 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = UIColor.white
+        cv.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1)
         cv.dataSource = self
         cv.delegate = self
         return cv
@@ -21,6 +21,8 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
     
     let cellId = "cellId"
     let menuNames = ["Popular", "Recent", "Debuts", "Following"]
+    
+    var shotCollectionViewController: ShotCollectionViewController?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,10 +34,41 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
         
         let selectedIndexPath = IndexPath(item: 0, section: 0)
         collectionView.selectItem(at: selectedIndexPath, animated: false, scrollPosition: .init(rawValue: 0))
+        
+        //设置焦点
+        setupFocusBar()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    var focusBarLeftAnchorConstraint: NSLayoutConstraint?
+
+    func setupFocusBar() {
+        let focusBarView = UIView()
+        focusBarView.backgroundColor = UIColor(red:0.92, green:0.30, blue:0.54, alpha:1.00)
+        focusBarView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(focusBarView)
+        
+        
+        focusBarLeftAnchorConstraint = focusBarView.leftAnchor.constraint(equalTo: self.leftAnchor)
+        
+        focusBarLeftAnchorConstraint?.isActive = true
+        focusBarView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        focusBarView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1/4).isActive = true
+        focusBarView.heightAnchor.constraint(equalToConstant: 4).isActive = true
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        print(indexPath.item)
+//        let x = CGFloat(indexPath.item) * frame.width / 4
+//        focusBarLeftAnchorConstraint?.constant = x
+//        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseOut, animations: {self.layoutIfNeeded()}, completion: nil)
+        
+        //切换view
+        shotCollectionViewController?.scrollToMenuIndex(menuIndex: indexPath.item)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

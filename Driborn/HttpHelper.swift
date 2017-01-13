@@ -13,7 +13,9 @@ class HttpHelper {
     
     let url = "https://api.dribbble.com/v1/"
     
-    func sendShotRequest(module:String, completionHandler:@escaping (AnyObject?, NSError?) -> ()) {
+    var params: Dictionary<String, Any>!
+    
+    func sendShotRequest(completionHandler:@escaping (Any?, Error?) -> ()) {
         /**
          shot
          get https://api.dribbble.com/v1/shots
@@ -25,21 +27,34 @@ class HttpHelper {
             ]
         
         // Add URL parameters
-        let urlParams = [
+        var urlParams: Dictionary<String, Any> = [
             "token_type": "bearer",
             "scope": "public write",
             "access_token": "541543c38ceda79c3b802c913ff3e8d9ac460d033d7a018aa6da89f343fc179b",
             ]
-        let requestUrl = "\(self.url)\(module)"
+        
+        //
+        print(params)
+        
+        for (key, value) in params {
+            urlParams[key] = value
+        }
+        urlParams.removeValue(forKey: "module")
+        print(urlParams)
+        
+        
+        let requestUrl = "\(self.url)\(params?["module"] as! String)"
+        
+        print(requestUrl)
         // Fetch Request
         Alamofire.request(requestUrl, method: .get, parameters: urlParams, encoding: URLEncoding.default, headers: headers)
             .validate(statusCode: 200..<300)
             .responseJSON { response in
                 switch response.result {
                 case .success(let value):
-                    completionHandler(value as AnyObject?, nil)
+                    completionHandler(value, nil)
                 case .failure(let error):
-                    completionHandler(nil, error as NSError?)
+                    completionHandler(nil, error)
                 }
         }
     }

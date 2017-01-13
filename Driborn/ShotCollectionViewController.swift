@@ -7,16 +7,19 @@
 //
 
 import UIKit
-import SwiftyJSON
 
-private let reuseIdentifier = "shotCell"
 
 class ShotCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     
-    var imageArray = [UIImage(named:"1"), UIImage(named:"2"), UIImage(named:"3"), UIImage(named:"4"), UIImage(named:"5"), UIImage(named:"6"), UIImage(named:"7"), UIImage(named:"8"), UIImage(named:"9"), UIImage(named:"10"), UIImage(named:"11"), UIImage(named:"12")]
     
-    var shotArray = [Shot]()
+    
+    var cellId = "cellId"
+    var debutsCellId = "debutsCellId"
+    var recentCellId = "recentCellId"
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,120 +32,101 @@ class ShotCollectionViewController: UICollectionViewController, UICollectionView
         titleLabel.textColor = UIColor(red:0.92, green:0.30, blue:0.54, alpha:1.00)
         navigationItem.titleView = titleLabel
         
-        collectionView?.backgroundColor = UIColor.white
-        collectionView?.register(ShotCell.self, forCellWithReuseIdentifier: "cellId")
-        
-        //collectionView向下移动50像素
-        collectionView?.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
-        collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
+        setupCollectionView()
         setupMenuBar()
-        
         //获取数据
-        fetchData()
+        
         
     }
     
+    func setupCollectionView() {
+        
+        if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.scrollDirection = .horizontal
+            flowLayout.minimumLineSpacing = 0
+        }
+        
+        collectionView?.backgroundColor = UIColor.white
+        collectionView?.register(PopularCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView?.register(RecentCell.self, forCellWithReuseIdentifier: recentCellId)
+        collectionView?.register(DebutsCell.self, forCellWithReuseIdentifier: debutsCellId)
+        
+        //collectionView向下移动50像素
+        collectionView?.contentInset = UIEdgeInsets(top: 40, left: 0, bottom: 0, right: 0)
+        collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: 40, left: 0, bottom: 0, right: 0)
+        
+        collectionView?.isPagingEnabled = true
+    }
+    
+    func scrollToMenuIndex(menuIndex: Int) {
+        let indexPath = IndexPath(item: menuIndex, section: 0)
+        collectionView?.scrollToItem(at: indexPath, at: .init(rawValue: 0), animated: true)
+    }
+    
     //MARK 导航条
-    let menuBar: MenuBar = {
+    lazy var menuBar: MenuBar = {
         let mb = MenuBar()
+        mb.shotCollectionViewController = self
         return mb
     }()
     
     private func setupMenuBar() {
+        navigationController?.hidesBarsOnSwipe = true
+        
+        let focusView = UIView()
+        focusView.backgroundColor = UIColor(red:0.92, green:0.30, blue:0.54, alpha:1.00)
+        view.addSubview(focusView)
+        view.addConstraintsWithFormat(format: "H:|[v0]|", views: focusView)
+        view.addConstraintsWithFormat(format: "V:[v0]", views: focusView)
+        
+        
         view.addSubview(menuBar)
         view.addConstraintsWithFormat(format: "H:|[v0]|", views: menuBar)
-        view.addConstraintsWithFormat(format: "V:|[v0(50)]", views: menuBar)
+        view.addConstraintsWithFormat(format: "V:[v0(40)]", views: menuBar)
+        menuBar.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
     }
     
-    private func fetchData() {
-        let http = HttpHelper()
-        http.sendShotRequest(module: "shots") { responseObject, error in
-            if error == nil {
-                let data = JSON(responseObject!)
-                
-                for item in data {
-                    
-                    let shot = Shot()
-                    let images = Images()
-                    shot.id = Int(item.1["id"].stringValue)!
-                    shot.title = item.1["title"].stringValue
-                    
-                    images.hidpi = item.1["images"]["hidpi"].stringValue
-                    images.normal = item.1["images"]["normal"].stringValue
-                    images.teaser = item.1["images"]["teaser"].stringValue
-                    
-                    shot.images = images
-                    self.shotArray.append(shot)
-                }
-                DispatchQueue.main.async {
-                    self.collectionView?.reloadData()
-                }
-                
-                
-            }
-        }
-        
-        
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        menuBar.focusBarLeftAnchorConstraint?.constant = scrollView.contentOffset.x / 4
+    }
+    
+    override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let index = Int(targetContentOffset.pointee.x / view.frame.width)
+        let indexPath = IndexPath(item: index, section: 0)
+        menuBar.collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .init(rawValue: 0))
         
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return shotArray.count
+        return 4
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! ShotCell
-        cell.shot = shotArray[indexPath.item]
-        cell.backgroundColor = UIColor(red:0.20, green:0.20, blue:0.20, alpha:1.00)
+        
+        let identifier: String
+        
+        switch indexPath.item {
+        case 1:
+            identifier = recentCellId
+        case 2:
+            identifier = debutsCellId
+        default:
+            identifier = cellId
+        }
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width / 2, height: view.frame.width / 8 * 3 )
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-    
-    
-    
-    //    func setupCollectionView() {
-    //
-    //        let layout = UICollectionViewFlowLayout()
-    //        layout.minimumLineSpacing = 0
-    //        layout.minimumInteritemSpacing = 0
-    //        shotCollectionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
-    //        shotCollectionView.register(ShotCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-    //        shotCollectionView.backgroundColor = UIColor.white
-    //        shotCollectionView.delegate = self
-    //        shotCollectionView.dataSource = self
-    //
-    //    }
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+            return CGSize(width: view.frame.width, height: view.frame.height - 40)
+        }
+        
+        
+        
+        
 }
 
 
-//extension ShotCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-//
-//    func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 1
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of items
-//        return imageArray.count
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ShotCollectionViewCell
-//        cell.imageView.image = imageArray[indexPath.row]
-//        // Configure the cell
-//        return cell
-//    }
-//}
+
 

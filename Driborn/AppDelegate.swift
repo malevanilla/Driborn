@@ -29,7 +29,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //导航条去阴影
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-        //状态条翻白
+        
+        //状态条颜色
+        let statusBarBackgroundView = UIView()
+        statusBarBackgroundView.backgroundColor = UIColor.white
+        window?.addSubview(statusBarBackgroundView)
+        window?.addConstraintsWithFormat(format: "H:|[v0]|", views: statusBarBackgroundView)
+        window?.addConstraintsWithFormat(format: "V:|[v0(20)]|", views: statusBarBackgroundView)
+        //状态条文字翻白
 //        UIApplication.shared.statusBarStyle = .lightContent
         return true
     }

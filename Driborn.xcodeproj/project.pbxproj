@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		E70190C81E272F66009088DC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70190C71E272F66009088DC /* Extensions.swift */; };
+		E73F22461E29461A00167F43 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73F22451E29461A00167F43 /* ApiService.swift */; };
+		E73F22481E295F3500167F43 /* PopularCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73F22471E295F3500167F43 /* PopularCell.swift */; };
+		E73F224A1E29721600167F43 /* DebutsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73F22491E29721600167F43 /* DebutsCell.swift */; };
+		E73F224C1E29752F00167F43 /* RecentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73F224B1E29752F00167F43 /* RecentCell.swift */; };
 		E74767851E23A08400300064 /* ShotCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74767841E23A08400300064 /* ShotCollectionViewController.swift */; };
 		E75CA2061E1C9EFC0036CFC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CA2051E1C9EFC0036CFC1 /* AppDelegate.swift */; };
 		E75CA20B1E1C9EFC0036CFC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75CA2091E1C9EFC0036CFC1 /* Main.storyboard */; };
@@ -41,6 +45,10 @@
 
 /* Begin PBXFileReference section */
 		E70190C71E272F66009088DC /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E73F22451E29461A00167F43 /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		E73F22471E295F3500167F43 /* PopularCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularCell.swift; sourceTree = "<group>"; };
+		E73F22491E29721600167F43 /* DebutsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebutsCell.swift; sourceTree = "<group>"; };
+		E73F224B1E29752F00167F43 /* RecentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentCell.swift; sourceTree = "<group>"; };
 		E74767841E23A08400300064 /* ShotCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotCollectionViewController.swift; sourceTree = "<group>"; };
 		E75CA2021E1C9EFC0036CFC1 /* Driborn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Driborn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75CA2051E1C9EFC0036CFC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,9 +78,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E73F22441E2945FB00167F43 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E73F22451E29461A00167F43 /* ApiService.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
 		E75CA1F91E1C9EFC0036CFC1 = {
 			isa = PBXGroup;
 			children = (
+				E73F22441E2945FB00167F43 /* API */,
 				E75CA2041E1C9EFC0036CFC1 /* Driborn */,
 				E75CA2031E1C9EFC0036CFC1 /* Products */,
 			);
@@ -127,6 +144,9 @@
 			children = (
 				E76C429E1E2681FB0069C272 /* MenuBar.swift */,
 				E75CA22A1E1D07350036CFC1 /* ShotCell.swift */,
+				E73F22471E295F3500167F43 /* PopularCell.swift */,
+				E73F22491E29721600167F43 /* DebutsCell.swift */,
+				E73F224B1E29752F00167F43 /* RecentCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -240,11 +260,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E74767851E23A08400300064 /* ShotCollectionViewController.swift in Sources */,
+				E73F22481E295F3500167F43 /* PopularCell.swift in Sources */,
 				E75CA20E1E1C9EFC0036CFC1 /* Driborn.xcdatamodeld in Sources */,
 				E75CA22B1E1D07350036CFC1 /* ShotCell.swift in Sources */,
 				E75CA2061E1C9EFC0036CFC1 /* AppDelegate.swift in Sources */,
 				E76C429F1E2681FB0069C272 /* MenuBar.swift in Sources */,
+				E73F22461E29461A00167F43 /* ApiService.swift in Sources */,
 				E76C42A51E269ED30069C272 /* Shot.swift in Sources */,
+				E73F224C1E29752F00167F43 /* RecentCell.swift in Sources */,
+				E73F224A1E29721600167F43 /* DebutsCell.swift in Sources */,
 				E75CA2201E1CCAC10036CFC1 /* HttpHelper.swift in Sources */,
 				E70190C81E272F66009088DC /* Extensions.swift in Sources */,
 			);
