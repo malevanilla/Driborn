@@ -9,19 +9,14 @@
 import UIKit
 
 class RecentCell: PopularCell {
-
-    override func fetchShots() {
-        let params: Dictionary<String, Any> = [
-            "module": "shots",
-            "list": "",
-            "sort": "recent",
-            "page": 1,
-            ]
-        ApiService.sharedInstance.fetchShot(params: params) { (shots: [Shot]) in
-            self.shots = shots
-            self.collectionView.reloadData()
+    
+    dynamic override var params: Dictionary<String,Any> {
+        get {
+            return super.params
         }
-
+        set {
+            super.params = ["module": "shots", "sort": "recent", "page": super.currentPage]
+        }
     }
-
+    
 }

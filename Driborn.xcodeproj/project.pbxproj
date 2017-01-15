@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E70190C81E272F66009088DC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70190C71E272F66009088DC /* Extensions.swift */; };
-		E73F22461E29461A00167F43 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73F22451E29461A00167F43 /* ApiService.swift */; };
 		E73F22481E295F3500167F43 /* PopularCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73F22471E295F3500167F43 /* PopularCell.swift */; };
 		E73F224A1E29721600167F43 /* DebutsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73F22491E29721600167F43 /* DebutsCell.swift */; };
 		E73F224C1E29752F00167F43 /* RecentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73F224B1E29752F00167F43 /* RecentCell.swift */; };
@@ -26,6 +25,7 @@
 		E75CA22B1E1D07350036CFC1 /* ShotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CA22A1E1D07350036CFC1 /* ShotCell.swift */; };
 		E76C429F1E2681FB0069C272 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76C429E1E2681FB0069C272 /* MenuBar.swift */; };
 		E76C42A51E269ED30069C272 /* Shot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76C42A41E269ED30069C272 /* Shot.swift */; };
+		E79CE95A1E2A6C3300ABC1A3 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79CE9591E2A6C3300ABC1A3 /* ApiService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,7 +45,6 @@
 
 /* Begin PBXFileReference section */
 		E70190C71E272F66009088DC /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		E73F22451E29461A00167F43 /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		E73F22471E295F3500167F43 /* PopularCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularCell.swift; sourceTree = "<group>"; };
 		E73F22491E29721600167F43 /* DebutsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebutsCell.swift; sourceTree = "<group>"; };
 		E73F224B1E29752F00167F43 /* RecentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentCell.swift; sourceTree = "<group>"; };
@@ -63,6 +62,7 @@
 		E75CA22A1E1D07350036CFC1 /* ShotCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotCell.swift; sourceTree = "<group>"; };
 		E76C429E1E2681FB0069C272 /* MenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		E76C42A41E269ED30069C272 /* Shot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shot.swift; sourceTree = "<group>"; };
+		E79CE9591E2A6C3300ABC1A3 /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiService.swift; path = Driborn/ApiService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,15 +81,15 @@
 		E73F22441E2945FB00167F43 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				E73F22451E29461A00167F43 /* ApiService.swift */,
+				E79CE9591E2A6C3300ABC1A3 /* ApiService.swift */,
 			);
 			name = API;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		E75CA1F91E1C9EFC0036CFC1 = {
 			isa = PBXGroup;
 			children = (
-				E73F22441E2945FB00167F43 /* API */,
 				E75CA2041E1C9EFC0036CFC1 /* Driborn */,
 				E75CA2031E1C9EFC0036CFC1 /* Products */,
 			);
@@ -106,6 +106,7 @@
 		E75CA2041E1C9EFC0036CFC1 /* Driborn */ = {
 			isa = PBXGroup;
 			children = (
+				E73F22441E2945FB00167F43 /* API */,
 				E75CA2051E1C9EFC0036CFC1 /* AppDelegate.swift */,
 				E76C42A61E269EE00069C272 /* Model */,
 				E76C42A31E26854D0069C272 /* View */,
@@ -145,8 +146,8 @@
 				E76C429E1E2681FB0069C272 /* MenuBar.swift */,
 				E75CA22A1E1D07350036CFC1 /* ShotCell.swift */,
 				E73F22471E295F3500167F43 /* PopularCell.swift */,
-				E73F22491E29721600167F43 /* DebutsCell.swift */,
 				E73F224B1E29752F00167F43 /* RecentCell.swift */,
+				E73F22491E29721600167F43 /* DebutsCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -261,11 +262,11 @@
 			files = (
 				E74767851E23A08400300064 /* ShotCollectionViewController.swift in Sources */,
 				E73F22481E295F3500167F43 /* PopularCell.swift in Sources */,
+				E79CE95A1E2A6C3300ABC1A3 /* ApiService.swift in Sources */,
 				E75CA20E1E1C9EFC0036CFC1 /* Driborn.xcdatamodeld in Sources */,
 				E75CA22B1E1D07350036CFC1 /* ShotCell.swift in Sources */,
 				E75CA2061E1C9EFC0036CFC1 /* AppDelegate.swift in Sources */,
 				E76C429F1E2681FB0069C272 /* MenuBar.swift in Sources */,
-				E73F22461E29461A00167F43 /* ApiService.swift in Sources */,
 				E76C42A51E269ED30069C272 /* Shot.swift in Sources */,
 				E73F224C1E29752F00167F43 /* RecentCell.swift in Sources */,
 				E73F224A1E29721600167F43 /* DebutsCell.swift in Sources */,
@@ -325,7 +326,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_OPTIMIZATION_LEVEL = fast;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -373,6 +374,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = fast;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -433,7 +435,7 @@
 				E75CA2161E1C9EFC0036CFC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		E75CA2171E1C9EFC0036CFC1 /* Build configuration list for PBXNativeTarget "Driborn" */ = {
 			isa = XCConfigurationList;
@@ -442,7 +444,7 @@
 				E75CA2191E1C9EFC0036CFC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 

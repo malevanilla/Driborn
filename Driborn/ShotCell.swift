@@ -39,8 +39,8 @@ class ShotCell: BaseCell {
     }()
 
     func setupShotImage() {
-        if var shotImageUrl = shot?.images?.hidpi {
-            print(shotImageUrl)
+        if var shotImageUrl = shot?.images?.normal {
+       //     print(shotImageUrl)
             
             if shotImageUrl == "" {
                 shotImageUrl = (shot?.images?.normal)!

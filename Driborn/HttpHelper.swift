@@ -33,19 +33,16 @@ class HttpHelper {
             "access_token": "541543c38ceda79c3b802c913ff3e8d9ac460d033d7a018aa6da89f343fc179b",
             ]
         
-        //
-        print(params)
-        
         for (key, value) in params {
             urlParams[key] = value
         }
         urlParams.removeValue(forKey: "module")
-        print(urlParams)
+//        print(urlParams)
         
         
         let requestUrl = "\(self.url)\(params?["module"] as! String)"
         
-        print(requestUrl)
+//        print(requestUrl)
         // Fetch Request
         Alamofire.request(requestUrl, method: .get, parameters: urlParams, encoding: URLEncoding.default, headers: headers)
             .validate(statusCode: 200..<300)

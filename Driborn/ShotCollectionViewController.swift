@@ -11,14 +11,9 @@ import UIKit
 
 class ShotCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    
-    
-    
     var cellId = "cellId"
     var debutsCellId = "debutsCellId"
     var recentCellId = "recentCellId"
-    
-    
     
     
     override func viewDidLoad() {
@@ -34,9 +29,6 @@ class ShotCollectionViewController: UICollectionViewController, UICollectionView
         
         setupCollectionView()
         setupMenuBar()
-        //获取数据
-        
-        
     }
     
     func setupCollectionView() {
@@ -54,8 +46,11 @@ class ShotCollectionViewController: UICollectionViewController, UICollectionView
         //collectionView向下移动50像素
         collectionView?.contentInset = UIEdgeInsets(top: 40, left: 0, bottom: 0, right: 0)
         collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: 40, left: 0, bottom: 0, right: 0)
-        
+        collectionView?.showsHorizontalScrollIndicator = false
+        collectionView?.showsVerticalScrollIndicator = false
         collectionView?.isPagingEnabled = true
+        
+        
     }
     
     func scrollToMenuIndex(menuIndex: Int) {
@@ -90,11 +85,17 @@ class ShotCollectionViewController: UICollectionViewController, UICollectionView
         menuBar.focusBarLeftAnchorConstraint?.constant = scrollView.contentOffset.x / 4
     }
     
+    
+    
     override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let index = Int(targetContentOffset.pointee.x / view.frame.width)
         let indexPath = IndexPath(item: index, section: 0)
         menuBar.collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .init(rawValue: 0))
-        
+        navigationController?.hidesBarsOnSwipe = true
+    }
+    
+    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        navigationController?.hidesBarsOnSwipe = false
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -121,10 +122,6 @@ class ShotCollectionViewController: UICollectionViewController, UICollectionView
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
             return CGSize(width: view.frame.width, height: view.frame.height - 40)
         }
-        
-        
-        
-        
 }
 
 
