@@ -61,7 +61,6 @@ class PopularCell: BaseCell,UICollectionViewDataSource, UICollectionViewDelegate
                 self.allowLoadMore = true
                 
 //                var shotArray:[Shot] = shots                
-                
 //                for (i,shot) in shots.enumerated() {
 //                    
 //                    if self.shotIdArray.contains(shot.id) {
@@ -106,6 +105,23 @@ class PopularCell: BaseCell,UICollectionViewDataSource, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        //
+        let attributes = collectionView.layoutAttributesForItem(at: indexPath)
+        let cellRect =  attributes?.frame
+        var cellFrameInSuperview = collectionView.convert(cellRect!, to: collectionView.superview)
+        //此处应做顶和底判断，以后加
+        cellFrameInSuperview.origin.x = cellFrameInSuperview.origin.x + cellFrameInSuperview.width / 2 - 4
+        cellFrameInSuperview.origin.y = cellFrameInSuperview.origin.y + cellFrameInSuperview.height / 2 + 104 - 3
+        let centerPoint = cellFrameInSuperview.origin
+
+        
+        let shotDetail = ShotDetail()
+        
+        shotDetail.showDetailView(cellCenter: centerPoint)
     }
     
     func loadMore() {

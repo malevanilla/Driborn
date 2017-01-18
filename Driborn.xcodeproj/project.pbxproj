@@ -11,6 +11,7 @@
 		E73F22481E295F3500167F43 /* PopularCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73F22471E295F3500167F43 /* PopularCell.swift */; };
 		E73F224A1E29721600167F43 /* DebutsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73F22491E29721600167F43 /* DebutsCell.swift */; };
 		E73F224C1E29752F00167F43 /* RecentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73F224B1E29752F00167F43 /* RecentCell.swift */; };
+		E745E0E41E2F46C50034711C /* ShotDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E745E0E31E2F46C50034711C /* ShotDetail.swift */; };
 		E74767851E23A08400300064 /* ShotCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74767841E23A08400300064 /* ShotCollectionViewController.swift */; };
 		E75CA2061E1C9EFC0036CFC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CA2051E1C9EFC0036CFC1 /* AppDelegate.swift */; };
 		E75CA20B1E1C9EFC0036CFC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75CA2091E1C9EFC0036CFC1 /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		E73F22471E295F3500167F43 /* PopularCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularCell.swift; sourceTree = "<group>"; };
 		E73F22491E29721600167F43 /* DebutsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebutsCell.swift; sourceTree = "<group>"; };
 		E73F224B1E29752F00167F43 /* RecentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentCell.swift; sourceTree = "<group>"; };
+		E745E0E31E2F46C50034711C /* ShotDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotDetail.swift; sourceTree = "<group>"; };
 		E74767841E23A08400300064 /* ShotCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotCollectionViewController.swift; sourceTree = "<group>"; };
 		E75CA2021E1C9EFC0036CFC1 /* Driborn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Driborn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75CA2051E1C9EFC0036CFC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			children = (
 				E70190C71E272F66009088DC /* Extensions.swift */,
 				E75CA21F1E1CCAC10036CFC1 /* HttpHelper.swift */,
+				E745E0E31E2F46C50034711C /* ShotDetail.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				E73F224C1E29752F00167F43 /* RecentCell.swift in Sources */,
 				E73F224A1E29721600167F43 /* DebutsCell.swift in Sources */,
 				E75CA2201E1CCAC10036CFC1 /* HttpHelper.swift in Sources */,
+				E745E0E41E2F46C50034711C /* ShotDetail.swift in Sources */,
 				E70190C81E272F66009088DC /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

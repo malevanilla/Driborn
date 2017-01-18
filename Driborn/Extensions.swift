@@ -58,3 +58,9 @@ class MyImageView: UIImageView {
     }
 }
 
+extension CGPoint {
+    func collectionCellCenter(indexPath:IndexPath){
+        
+    }
+}
+
