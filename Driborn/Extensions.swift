@@ -19,13 +19,14 @@ extension UIView {
         //        translatesAutoresizingMaskIntoConstraints = false
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutFormatOptions(), metrics: nil, views: viewDictionary))
     }
+    
 }
 
 let imageCache = NSCache<NSString, UIImage>()
 class MyImageView: UIImageView {
     
     var imageUrlString: NSString?
-
+    
     
     func loadImageUsingUrlString(urlString: NSString) {
         
@@ -35,8 +36,9 @@ class MyImageView: UIImageView {
         image = nil
         
         if let imageFromCache = imageCache.object(forKey: urlString as NSString) {
+            
+            
             self.image = imageFromCache
-            return
         }
         
         URLSession.shared.dataTask(with: url!, completionHandler: { (data, responds, error) in
@@ -52,7 +54,6 @@ class MyImageView: UIImageView {
                 }
                 imageCache.setObject(imageToCache!, forKey: urlString)
             })
-            
         }).resume()
         
     }

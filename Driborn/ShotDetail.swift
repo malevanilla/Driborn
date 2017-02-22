@@ -34,6 +34,7 @@ class ShotDetail: NSObject {
             view.frame = CGRect(x: cellCenter.x, y: cellCenter.y, width: 8, height: 6)
             
             keywindow.addSubview(view)
+            
             let height = keywindow.frame.width / 4 * 3
         
             UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
@@ -41,9 +42,10 @@ class ShotDetail: NSObject {
             }, completion: { (completedAnimation) in
                 
                 //
+                
+                
             })
             print("this is a view")
-
         }
         
         

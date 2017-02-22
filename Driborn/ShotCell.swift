@@ -46,6 +46,7 @@ class ShotCell: BaseCell {
                 shotImageUrl = (shot?.images?.normal)!
             }
             shotImageView.loadImageUsingUrlString(urlString: shotImageUrl as NSString)
+        
         }
     }
     

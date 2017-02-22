@@ -83,8 +83,14 @@ class PopularCell: BaseCell,UICollectionViewDataSource, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! ShotCell
-        cell.shot = shots[indexPath.item]
-        cell.backgroundColor = UIColor(red:0.20, green:0.20, blue:0.20, alpha:1.00)
+        cell.shotImageView.alpha = 0
+        
+        
+        UIView.animate(withDuration: 1, delay: 0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+            cell.shot = self.shots[indexPath.item]
+
+        }, completion: nil)
+        
         
         if allowLoadMore && currentPage < 50 {
             loadMore()
